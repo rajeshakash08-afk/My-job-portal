@@ -1,0 +1,161 @@
+.mycontact {
+    background: linear-gradient(150deg, #810181, #2948d3, black);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0;
+}
+
+/*Contact container*/
+.contact-container {
+    width: 80%;
+    margin: auto;
+    margin-top: 120px;
+    text-align: center;
+}
+.contact-container{
+    width: 50%;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px #0005;
+    backdrop-filter: blur(4px);
+}
+
+.contact-container h1 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.contact-container p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Contact */
+.contact-form {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/*button*/
+
+.contact-form button {
+    padding: 12px;
+    background: #002a8f;
+    color: white;
+    border: none;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: linear-gradient(135deg, #810181, #2948d3, #08e9b8);
+    transform: scale(1.08);
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+
+    .contact-container {
+        width: 95%;
+        margin-top: 80px;
+    }
+
+    .contact-container h1 {
+        font-size: 26px;
+    }
+
+    .contact-container p {
+        font-size: 16px;
+    }
+
+    .contact-form {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    .contact-form button {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+
+
+/* Tablet View */
+@media (max-width: 900px) {
+
+    .contact-container {
+        width: 90%;
+    }
+
+    .contact-container h1 {
+        font-size: 30px;
+    }
+
+    .contact-container p {
+        font-size: 17px;
+    }
+
+    .contact-form {
+        width: 80%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 16px;
+    }
+}
+
+
+
+/*Desktop View */
+@media (min-width: 1400px) {
+
+    .contact-container {
+        width: 60%;
+    }
+
+    .contact-container h1 {
+        font-size: 38px;
+    }
+
+    .contact-container p {
+        font-size: 20px;
+    }
+
+    .contact-form {
+        width: 50%;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 18px;
+    }
+}

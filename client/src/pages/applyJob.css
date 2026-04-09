@@ -1,0 +1,119 @@
+.applyjob {
+    background: linear-gradient(150deg, #810181, #2948d3, black);
+    min-height: 100vh;
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apply-container {
+    width: 50%;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px #0005;
+    backdrop-filter: blur(4px);
+}
+
+.apply-container h1 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+.apply-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.apply-form input {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+
+.apply-form button {
+    padding: 12px;
+    background: #002a8f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.apply-form button:hover {
+    background: linear-gradient(120deg, #810181, #2948d3, #08e9b8);
+}
+
+/* Back Button */
+.back-btn {
+    margin-top: 25px;
+}
+
+.back-btn p {
+    color: #f2f2f2;
+    text-decoration: none;
+    border: 1px solid rgb(207, 228, 18);
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+    margin-left: 50px;
+}
+
+.back-btn p:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+    box-shadow: 0 8px 20px rgb(150, 148, 148);
+}
+
+/* TABLET VIEW */
+@media (max-width: 992px) {
+
+    .apply-container {
+        width: 70%;
+    }
+
+    .back-btn p {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* MOBILE VIEW */
+@media (max-width: 600px) {
+
+    .applyjob {
+        padding-top: 110px;
+    }
+
+    .apply-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .apply-form input,
+    .apply-form button {
+        font-size: 15px;
+    }
+
+    .apply-container h1 {
+        font-size: 22px;
+    }
+
+    .back-btn p {
+        font-size: 15px;
+        padding: 5px 10px;
+        margin: auto;
+    }
+}

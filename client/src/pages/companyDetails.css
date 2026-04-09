@@ -1,0 +1,165 @@
+.company {
+  background: linear-gradient(150deg, hsl(300, 98%, 25%), #2948d3, black);
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 30px 0;
+}
+
+/* Container */
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* Headding */
+h1 {
+  color: #0f0f0f;
+  margin-bottom: 20px;
+}
+
+/* SubHeadding */
+h3 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.job-box1 {
+  border: 1px solid #080808;
+  padding: 25px;
+  margin: 15px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 25px rgb(0, 0, 0);
+  background: linear-gradient(135deg, #86cbeb, #f2f2f2);
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin: 10px 0;
+  background: #f2f2f2;
+  border-radius: 5px;
+}
+
+/* Button */
+button {
+  padding: 10px 20px;
+  border: none;
+  background: #2805ee;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #b42525;
+}
+
+.back-home a{
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid rgb(207, 228, 18);
+  border-radius: 5px;
+  padding: 6px;
+  margin-left: 480px;
+  
+}
+
+.back-home a:hover{
+  background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+    box-shadow: 0 8px 20px rgb(150, 148, 148);
+}
+
+
+/* Mobile View */
+@media (max-width: 600px) {
+
+  .container {
+    width: 95%;
+    margin-top: 80px;
+  }
+
+  h1 {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  ul {
+    padding: 0 10px;
+  }
+
+  li {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+
+
+/* Tablet View */
+@media (max-width: 900px) {
+
+  .container {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  li {
+    font-size: 17px;
+  }
+
+  button {
+    padding: 12px 18px;
+  }
+}
+
+
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+
+  .container {
+    width: 60%;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+
+  li {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  button {
+    padding: 14px 25px;
+    font-size: 18px;
+  }
+}

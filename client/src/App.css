@@ -1,0 +1,245 @@
+/*  NAVIGATION BAR */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 15px;
+  background-color: rgb(4, 5, 65);
+  position: fixed;
+  width: 98%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  
+}
+
+/* Logo */
+.logo img {
+  height: 60px;
+  width: 65px;
+}
+
+/* Desktop Nav Links */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links li,
+.nav-links li a {
+  background: transparent !important;  /* FIXED unwanted bg */
+}
+
+.nav-links li a {
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.nav-links li a:hover {
+  color: #00d9ff;
+}
+
+/* Login Button */
+.logout-btn {
+  background: rgb(223, 18, 18);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background: #cf02cf;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: none;
+  margin-right: 20px;
+  font-size: 35px;
+  cursor: pointer;
+  color: white;
+  background: none;
+}
+
+/* AUTH BUTTONS (Profile + Logout / Login) */
+.auth-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+/* Profile Icon */
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/*HAMBURGER MENU (MOBILE/TABLET)*/
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 97%;
+    background: rgb(4, 5, 65);
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+  }
+
+  /* Show on toggle */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .auth-buttons {
+    display: none;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  nav {
+    padding: 6px 10px;
+  }
+}
+
+
+/*LOGIN PAGE*/
+
+.login {
+  height: 100vh;
+  width: 100%;
+  background-image: url("./assets/Login-image-1.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 0;
+  margin-top: 0;
+}
+
+.login-box {
+  width: 350px;
+  padding: 40px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 10px rgba(29, 15, 15, 0.333);
+  text-align: center;
+}
+
+.login-box h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+.login-box input {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.login-box button {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: linear-gradient(#3209e7, #cf02cf);
+  color: white;
+  transition: 0.3s;
+}
+
+.login-box button:hover {
+  background: yellow;
+  color: black;
+}
+
+.signup-link {
+  display: block;
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  border: 1px solid rgb(207, 228, 18);
+  border-radius: 5px;
+  width: 60px;
+  padding: 5px;
+  margin-left: 135px;
+}
+
+.signup-link:hover{
+  background-color: #cee025;
+  color: black;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .login {
+    padding-right: 50px;
+  }
+  .login-box {
+    width: 380px;
+  }
+}
+
+/* Tablet / Big Mobile */
+@media (max-width: 768px) {
+  .login {
+    justify-content: center;
+    padding-right: 0;
+  }
+  .login-box {
+    width: 80%;
+    padding: 30px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .login {
+    margin-top: 70px;
+  }
+  .login-box {
+    width: 90%;
+    padding: 25px;
+  }
+  .login-box h2 {
+    font-size: 26px;
+  }
+  .login-box input {
+    height: 34px;
+    font-size: 14px;
+  }
+  .login-box button {
+    height: 38px;
+    font-size: 16px;
+  }
+  .signup-link {
+    font-size: 16px;
+  }
+}
