@@ -24,10 +24,10 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="footer-social">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaGithub /></a>
+            <a href="Facebook"><FaFacebookF /></a>
+            <a href="Instagram"><FaInstagram /></a>
+            <a href="Linkedin"><FaLinkedinIn /></a>
+            <a href="Github"><FaGithub /></a>
           </div>
         </div>
 
