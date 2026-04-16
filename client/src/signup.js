@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./signup.css";
+import { useNavigate } from "react-router-dom";
 
 function SignupPage() {
   const navigate = useNavigate();
