@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const app = express();
 const cors = require("cors");
 
-// 👉 Render gives PORT dynamically
+//  Render gives PORT dynamically
 const port = process.env.PORT || 5000;
 
 // ROUTES
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     res.send("Hello from the backend!");
 });
 
-// 👉 All ROUTES
+//  All ROUTES
 app.use("/user", userRoutes);
 app.use("/login", loginRoutes);
 app.use("/contact", contactRoutes);
@@ -31,13 +31,13 @@ app.use("/applyjob", applyJobRoutes);
 app.use("/company", companyRoutes);
 app.use("/uploads", express.static("uploads"));
 
-// 👉 MongoDB Atlas Connection
+//  MongoDB Atlas Connection
 mongoose
     .connect(process.env.MONGO_URL)
     .then(() => console.log("Connected to MongoDB Atlas!"))
     .catch((err) => console.error("Error connecting to MongoDB:", err));
 
-// 👉 Start Server
+//  Start Server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });

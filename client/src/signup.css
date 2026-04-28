@@ -59,23 +59,62 @@
   background: yellow;
   color: black;
 }
-
-
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+/* Tablets */
+@media (max-width: 992px) {
   .signup-box {
-    width: 80%;
-    padding: 30px;
+    width: 60%;
+    padding: 35px;
+    margin-left: 0;      /* FIX */
   }
 }
 
-@media (max-width: 480px) {
+/* Large Phones */
+@media (max-width: 768px) {
+  .signup {
+    justify-content: center;  /* Form center on mobile/tablet */
+  }
+
   .signup-box {
-    width: 90%;
-    padding: 25px;
+    width: 80%;
+    padding: 30px;
+    margin-left: 0;      /* FIX */
   }
 
   .signup-box h2 {
-    font-size: 26px;
+    font-size: 28px;
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .signup {
+    justify-content: center;
+  }
+
+  .signup-box {
+    width: 90%;
+    padding: 25px;
+    margin-left: 0;        /* FIX */
+  }
+
+  .signup-box h2 {
+    font-size: 24px;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+  .signup {
+    justify-content: center;
+  }
+
+  .signup-box {
+    width: 95%;
+    padding: 20px;
+    margin-left: 0;        /* FIX */
+  }
+
+  .signup-box h2 {    
+    font-size: 20px;
   }
 }

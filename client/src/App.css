@@ -193,53 +193,126 @@ nav {
 }
 
 .signup-link:hover{
-  background-color: #cee025;
-  color: black;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+    box-shadow: 0 8px 20px rgb(150, 148, 148);
+
 }
 
-/* Tablet */
+
+
+/* ---------- TABLETS (<= 992px) ---------- */
 @media (max-width: 992px) {
   .login {
-    padding-right: 50px;
+    justify-content: center;   /* Keep box center on tablets */
+    padding-right: 0;
   }
+
   .login-box {
-    width: 380px;
+    width: 70%;
+    padding: 35px;
+    margin-right: 0;
+  }
+
+  .signup-link {
+    margin: 15px auto 0 auto;
   }
 }
 
-/* Tablet / Big Mobile */
+/* ---------- BIG MOBILE / SMALL TABLETS (<= 768px) ---------- */
 @media (max-width: 768px) {
   .login {
     justify-content: center;
     padding-right: 0;
   }
+
   .login-box {
     width: 80%;
     padding: 30px;
+    margin-right: 0;
+  }
+
+  .login-box h2 {
+    font-size: 28px;
+  }
+
+  .login-box input {
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .login-box button {
+    height: 40px;
+    font-size: 17px;
+  }
+
+  .signup-link {
+    margin: 15px auto 0 auto;   /* CENTER */
+    width: 80px;
+    text-align: center;
+    font-size: 16px;
   }
 }
 
-/* Small Mobile */
+/* ---------- SMALL MOBILE (<= 480px) ---------- */
 @media (max-width: 480px) {
   .login {
-    margin-top: 70px;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 10px;
   }
+
   .login-box {
     width: 90%;
     padding: 25px;
+    margin-right: 0;
   }
+
   .login-box h2 {
     font-size: 26px;
   }
+
   .login-box input {
     height: 34px;
     font-size: 14px;
   }
+
   .login-box button {
     height: 38px;
     font-size: 16px;
   }
+
   .signup-link {
+    margin: 15px auto 0 auto;   /* CENTER */
+    width: 80px;
     font-size: 16px;
+  }
+}
+
+/* ---------- EXTRA SMALL DEVICES (<= 320px) ---------- */
+@media (max-width: 320px) {
+  .login {
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .login-box {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .login-box h2 {
+    font-size: 22px;
+  }
+
+  .login-box button {
+    font-size: 15px;
+  }
+
+  .signup-link {
+    width: 75px;
+    font-size: 14px;
+    margin: 12px auto 0 auto;  /* CENTER */
   }
 }
