@@ -16,7 +16,7 @@ function SignupPage() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/user/register", {
+      await axios.post("https://my-job-portal-backend.onrender.com/user/register", {
         firstName,
         lastName,
         email,

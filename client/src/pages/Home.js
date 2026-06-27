@@ -11,7 +11,7 @@ function Home() {
   const [locationSearch, setLocationSearch] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/company/all")
+    axios.get("https://my-job-portal-backend.onrender.com/company/all")
       .then(res => setCompanies(res.data))
       .catch(err => console.log(err));
   }, []);
