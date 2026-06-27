@@ -12,7 +12,7 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/login/login", {
+      await axios.post("https://my-job-portal-backend.onrender.com/login/login", {
         email,
         password
       });
