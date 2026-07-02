@@ -5,6 +5,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 function LoginPage() {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,16 +13,25 @@ function LoginPage() {
     e.preventDefault();
 
     try {
-      await axios.post("https://my-job-portal-backend.onrender.com/login/login", {
-        email,
-        password
-      });
+      const res = await axios.post(
+        "https://my-job-portal-backend.onrender.com/login/login",
+        {
+          email,
+          password,
+        }
+      );
 
-      alert("Login successful!");
+      alert(res.data.message || "Login successful!");
       navigate("/home");
 
     } catch (error) {
-      alert("Invalid login!");
+      console.log(error);
+
+      alert(
+        error.response?.data?.message ||
+        error.response?.data ||
+        "Invalid login!"
+      );
     }
   };
 

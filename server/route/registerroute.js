@@ -4,18 +4,36 @@ const bcrypt = require("bcrypt");
 const User = require("../model/register");
 
 router.post("/register", async (req, res) => {
-    const { firstName, lastName, email, password, confirmPassword } = req.body;
-
-    if (!firstName || !lastName || !email || !password || password !== confirmPassword) {
-        return res.status(400).send("Please fill all fields correctly.");
-    }
-
     try {
-        const existingUser = await User.findOne({ email });
-        if (existingUser) return res.status(400).send("User with this email already exists.");
+        const { firstName, lastName, email, password, confirmPassword } = req.body;
 
+        // Check required fields
+        if (!firstName || !lastName || !email || !password || !confirmPassword) {
+            return res.status(400).json({
+                message: "Please fill all fields."
+            });
+        }
+
+        // Check password match
+        if (password !== confirmPassword) {
+            return res.status(400).json({
+                message: "Passwords do not match."
+            });
+        }
+
+        // Check existing user
+        const existingUser = await User.findOne({ email });
+
+        if (existingUser) {
+            return res.status(400).json({
+                message: "User with this email already exists."
+            });
+        }
+
+        // Hash password
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        // Create user
         const newUser = new User({
             firstName,
             lastName,
@@ -23,10 +41,22 @@ router.post("/register", async (req, res) => {
             password: hashedPassword
         });
 
+        // Save user
         await newUser.save();
-        res.status(201).send("Registration successful!");
+
+        return res.status(201).json({
+            success: true,
+            message: "Registration successful!"
+        });
+
     } catch (error) {
-        res.status(500).send("Registration failed. Please try again.");
+        console.error("REGISTER ERROR:", error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Registration failed",
+            error: error.message
+        });
     }
 });
 
