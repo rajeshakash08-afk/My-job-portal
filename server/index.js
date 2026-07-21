@@ -7,7 +7,7 @@ const cors = require("cors");
 const app = express();
 
 // PORT
-const port = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 
 // Middlewares
 app.use(cors());
@@ -23,7 +23,7 @@ const companyRoutes = require("./route/companyRoutes");
 
 // Home Route
 app.get("/", (req, res) => {
-    res.send("Hello from the backend!");
+  res.send("🚀 Job Portal Backend Running...");
 });
 
 // API Routes
@@ -38,29 +38,16 @@ app.use("/uploads", express.static("uploads"));
 
 // MongoDB Connection
 mongoose
-    .connect(process.env.MONGO_URL)
-    .then(() => {
-        console.log("✅ Connected to MongoDB Atlas");
-    })
-    .catch((err) => {
-        console.error("❌ MongoDB Connection Error:");
-        console.error(err);
-    });
+  .connect(process.env.MONGO_URL)
+  .then(() => {
+    console.log("✅ MongoDB Connected Successfully");
+  })
+  .catch((err) => {
+    console.error("❌ MongoDB Connection Error");
+    console.error(err);
+  });
 
-// Connection Events
-mongoose.connection.on("connected", () => {
-    console.log(" MongoDB Connected Successfully");
-});
-
-mongoose.connection.on("error", (err) => {
-    console.error(" MongoDB Error:", err);
-});
-
-mongoose.connection.on("disconnected", () => {
-    console.log(" MongoDB Disconnected");
-});
-
-// Start Server
-app.listen(port, () => {
-    console.log(` Server running on port ${port}`);
+// Server Start
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
 });

@@ -4,38 +4,43 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../model/register");
 
-router.post("/login", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    // Validation
     if (!email || !password) {
       return res.status(400).json({
-        message: "Missing fields"
+        message: "Email and Password are required",
       });
     }
 
+    // Check User
     const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(404).json({
-        message: "User not found"
+        message: "User not found",
       });
     }
 
-    const match = await bcrypt.compare(password, user.password);
+    // Compare Password
+    const isMatch = await bcrypt.compare(password, user.password);
 
-    if (!match) {
+    if (!isMatch) {
       return res.status(401).json({
-        message: "Incorrect password"
+        message: "Incorrect password",
       });
     }
 
+    // Generate Token
     const token = jwt.sign(
       { id: user._id },
       process.env.JWT_SECRET,
       { expiresIn: "7d" }
     );
 
+    // Success Response
     res.status(200).json({
       message: "Login successful",
       token,
@@ -43,16 +48,15 @@ router.post("/login", async (req, res) => {
         id: user._id,
         firstName: user.firstName,
         lastName: user.lastName,
-        email: user.email
-      }
+        email: user.email,
+      },
     });
 
   } catch (error) {
-    console.error("LOGIN ERROR:", error);
+    console.error("Login Error:", error);
 
     res.status(500).json({
       message: "Internal Server Error",
-      error: error.message
     });
   }
 });

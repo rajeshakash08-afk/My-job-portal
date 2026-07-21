@@ -14,23 +14,31 @@ function LoginPage() {
 
     try {
       const res = await axios.post(
-        "https://my-job-portal-backend.onrender.com/login/login",
+        "http://localhost:5000/login",
         {
           email,
           password,
         }
       );
 
-      alert(res.data.message || "Login successful!");
-      navigate("/home");
+      alert(res.data.message);
 
+      // Save Login Token
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      // Clear Form
+      setEmail("");
+      setPassword("");
+
+      // Redirect
+      navigate("/home");
     } catch (error) {
       console.log(error);
 
       alert(
         error.response?.data?.message ||
-        error.response?.data ||
-        "Invalid login!"
+        "Login Failed"
       );
     }
   };
@@ -61,7 +69,7 @@ function LoginPage() {
         </form>
 
         <Link to="/signup" className="signup-link">
-          Signup
+          Don't have an account? Signup
         </Link>
       </div>
     </div>

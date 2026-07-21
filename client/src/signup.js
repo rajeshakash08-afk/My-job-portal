@@ -15,9 +15,14 @@ function SignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault();
 
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+
     try {
       const res = await axios.post(
-        "https://my-job-portal-backend.onrender.com/user/register",
+        "http://localhost:5000/user/register",
         {
           firstName,
           lastName,
@@ -27,15 +32,21 @@ function SignupPage() {
         }
       );
 
-      alert(res.data.message || "Registration successful!");
-      navigate("/home");
+      alert(res.data.message);
+
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+
+      navigate("/login");
     } catch (error) {
       console.log(error);
 
       alert(
         error.response?.data?.message ||
-        error.response?.data ||
-        "Signup failed!"
+        "Registration Failed"
       );
     }
   };
@@ -89,7 +100,7 @@ function SignupPage() {
           <button type="submit">Sign Up</button>
         </form>
 
-        <div className="back-btn" onClick={() => navigate(-1)}>
+        <div className="back-btn" onClick={() => navigate("/login")}>
           <p className="back-text">Already have an account? Login</p>
         </div>
       </div>
